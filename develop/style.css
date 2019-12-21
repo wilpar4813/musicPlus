@@ -1,3 +1,14 @@
 #songSpot{
     padding: 20px;
 }
+
+#playlistItem {
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+#album{
+    margin-top: 8px;
+}
