@@ -6,6 +6,7 @@ $(document).ready(function(){
     var foundSongName;
     var clickThis;
     var addSongArr = [];
+    var newSongArr = [];
 
     $('#searchButton').on('click', function(){
         var artist = $('#searchInput').val();
@@ -31,15 +32,16 @@ $(document).ready(function(){
     })
 
     function selectToggle(compareSong){
-        console.log(compareSong);
+        //console.log(compareSong);
         
         if(addSongArr.length > 0){
             for(var i=0; i<addSongArr.length; i++){
-                // console.log(addSongArr[i].title)
-                // console.log(compareSong.slice(7))
+                //console.log(addSongArr[i].title)
+                //console.log(compareSong.slice(7))
                 if (addSongArr[i].title === compareSong.slice(7)) {
                     foundSongName = addSongArr[i].title;
                     foundSong = true;
+                    console.log(addSongArr)
                 }
             }
         }
@@ -59,13 +61,17 @@ $(document).ready(function(){
             clickThis.attr('style', 'background: darkgrey;');
             //remove selected song title out of array
             //filter the array to create a new array minus the selected song
-            var newSongArr = addSongArr.filter(function(val){
-                console.log(val.title);
-                console.log(compareSong.slice(7))
+            newSongArr = addSongArr.filter(function(val){
+                //console.log(val.title);
+                //console.log(compareSong.slice(7))
                 return val.title !== foundSongName;
             });
 
+            //console.log(newSongArr)
+
             addSongArr = newSongArr;
+
+            //console.log(addSongArr)
 
             foundSong = false;
         }
