@@ -2,11 +2,13 @@
 $(document).ready(function(){
 
     //var toggle = true;
+    var localPlaylist = localStorage.getItem('playlist');
     var foundSong = false;
     var foundSongName;
     var clickThis;
-    var addSongArr = [];
+    var addSongArr =  localPlaylist ? JSON.parse(localPlaylist) : [];
     var newSongArr = [];
+    var isPlaying = false;
 
     $('#searchButton').on('click', function(){
         var artist = $('#searchInput').val();
@@ -41,7 +43,6 @@ $(document).ready(function(){
                 if (addSongArr[i].title === compareSong.slice(7)) {
                     foundSongName = addSongArr[i].title;
                     foundSong = true;
-                    console.log(addSongArr)
                 }
             }
         }
@@ -54,9 +55,10 @@ $(document).ready(function(){
                 id: clickThis.attr('data-number'),
                 title:  clickThis.text().slice(7),
                 preview: clickThis.attr('data-preview')
-                    }
-                );
+                });
                 //console.log(addSongArr);
+                //save playlist array to local storage;
+                localStorage.setItem('playlist', JSON.stringify(addSongArr));
         } else {
             clickThis.attr('style', 'background: darkgrey;');
             //remove selected song title out of array
@@ -66,6 +68,8 @@ $(document).ready(function(){
                 //console.log(compareSong.slice(7))
                 return val.title !== foundSongName;
             });
+            //update playlist array in local storage;
+            localStorage.setItem('playlist', JSON.stringify(newSongArr));
 
             //console.log(newSongArr)
 
@@ -82,32 +86,82 @@ $(document).ready(function(){
         //add playlist array to playlist div
         var playlistEl = $('#playlist');
         addSongArr.forEach(function(val){
-        // //create new div
-       
+
+        //create new div
         var div = $('<div>');
         var preview = val.preview
         div.attr('id', 'playlistItem');
-        div.attr('data-title', val.title)
-        div.text(val.title);
-      
+        div.attr('data-title', val.title);
+        div.attr('data-play', 'https://img.icons8.com/flat_round/24/000000/play--v1.png');
+        div.attr('data-pause', 'https://img.icons8.com/flat_round/24/000000/pause--v1.png')
+        div.html(val.title + `<span =id'songBtn' style='float: right;'>
+        <img src='https://img.icons8.com/flat_round/24/000000/play--v1.png' /></span>`);
+        
         // Gets Link for Theme Song
         var audioElement = $("<audio>");
         
         audioElement.attr("src", preview);
         div.append(audioElement);
         playlistEl.append(div)
-                      
+                        
         })
     }
 
+    function initPlaylist(){
+        if(addSongArr.length > 0){
+            addToPlaylist();
+        }
+    }
+
     $(document).on('click', '#playlistItem', function(e){
-        //console.log($(this).attr('data-title'));    
-        $(this)[0].childNodes[1].play();
+        if(!isPlaying){
+            $(this)[0].childNodes[2].play();
+            isPlaying = true;
+            //get pause button attribute to display
+            var parentDiv = $(this).parent()[0].childNodes[3];
+            var pauseBtnData = parentDiv.getAttribute('data-pause');
+            //set img src attribute to be pause button
+            var pauseLocale = $(this)[0].childNodes[1].childNodes[1];
+            pauseLocale.setAttribute('src', pauseBtnData);
+
+            // $(this)[0].childNodes[2].on('ended', function() {
+            //     isPlaying = false;
+            //     var parentDiv = $(this).parent()[0].childNodes[3];
+            //     console.log(parentDiv)
+            //     var playBtnData = parentDiv.getAttribute('data-play');
+            //     //set img src attribute to be play button
+            //     var playLocale = $(this)[0].childNodes[1].childNodes[1];
+            //     playLocale.setAttribute('src', playBtnData);
+            //  });
+        }    
     })
 
     $('#add').on('click', function(e){
+        //remove previous playlist
+        $('#playlist').empty();
+        //re-add header and hr
+        var h1= $('<h1>');
+        h1.text('PlayList');
+        var hr = $('<hr>');
+        $('#playlist').append(h1);
+        $('#playlist').append(hr);
         //add to playlist
         addToPlaylist();
+    })
+
+    $('#remove').on('click', function(){
+        //clear background color and playlist array
+        $('#songRow').children().attr('style', 'background: darkgrey;');
+        localStorage.setItem('playlist', []);
+        addSongArr = [];
+        newSongArr = [];
+        //get all of the playlist items on the page
+        var playlistItems = document.querySelectorAll('#playlistItem');
+        var playlistItemsArr = [].slice.call(playlistItems);
+        //console.log(playlistItemsArr);
+        playlistItemsArr.forEach(function(val){
+            val.remove();
+        })
     })
 
     $(document).on('click', '#songSpot', function(e){
@@ -116,5 +170,9 @@ $(document).ready(function(){
         //create toggle function to change background color
         selectToggle(clickedSong);
     })
+
+    //initialize playlist from local storage if available
+    initPlaylist();
+
 })
 
