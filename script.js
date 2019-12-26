@@ -109,31 +109,49 @@ $(document).ready(function(){
 
     function initPlaylist(){
         if(addSongArr.length > 0){
+            fromLocal = true;
             addToPlaylist();
         }
     }
 
     $(document).on('click', '#playlistItem', function(e){
+        var playMe = $(this)[0].childNodes[2];
+        var thisEl = $(this);
+
         if(!isPlaying){
-            $(this)[0].childNodes[2].play();
+            //console.log(playMe)
+            playMe.play();
+            var parentDiv;
             isPlaying = true;
             //get pause button attribute to display
-            var parentDiv = $(this).parent()[0].childNodes[3];
+            parentDiv = $(this).parent()[0].childNodes[5];
+            //console.log(parentDiv)
             var pauseBtnData = parentDiv.getAttribute('data-pause');
             //set img src attribute to be pause button
             var pauseLocale = $(this)[0].childNodes[1].childNodes[1];
             pauseLocale.setAttribute('src', pauseBtnData);
 
-            // $(this)[0].childNodes[2].on('ended', function() {
-            //     isPlaying = false;
-            //     var parentDiv = $(this).parent()[0].childNodes[3];
-            //     console.log(parentDiv)
-            //     var playBtnData = parentDiv.getAttribute('data-play');
-            //     //set img src attribute to be play button
-            //     var playLocale = $(this)[0].childNodes[1].childNodes[1];
-            //     playLocale.setAttribute('src', playBtnData);
-            //  });
-        }    
+            playMe.addEventListener('ended', function() {
+                isPlaying = false;
+                //console.log($(this)[0].parentNode)
+                var parentDiv = $(this)[0].parentNode;
+                //console.log(parentDiv)
+                var playBtnData = parentDiv.getAttribute('data-play');
+                //set img src attribute to be play button
+                var imgSrcEl = $(this)[0].previousSibling.children[0];
+                imgSrcEl.setAttribute('src', playBtnData);
+                // console.log(parentDiv)
+             });
+        } else{
+            playMe.pause();
+            isPlaying = false;
+            //console.log(thisEl)
+            var playBtnData = thisEl.attr('data-play');
+            //get img element
+            var imgEl = thisEl.children()[0].children[0];
+            imgEl.setAttribute('src', playBtnData);
+            //console.log(thisEl.children()[0].children[0])
+        }   
     })
 
     $('#add').on('click', function(e){
