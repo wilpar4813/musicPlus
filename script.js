@@ -9,6 +9,8 @@ $(document).ready(function () {
     var addSongArr = localPlaylist ? JSON.parse(localPlaylist) : [];
     var newSongArr = [];
     var isPlaying = false;
+    var imgDataElNum;
+    var beenCleared = false;
 
     $('#searchButton').on('click', function () {
         $('#songRow').empty();
@@ -95,7 +97,7 @@ $(document).ready(function () {
             div.attr('data-title', val.title);
             div.attr('data-play', 'https://img.icons8.com/flat_round/24/000000/play--v1.png');
             div.attr('data-pause', 'https://img.icons8.com/flat_round/24/000000/pause--v1.png')
-            div.html(val.title + `<span =id'songBtn' style='float: right;'>
+            div.html(val.title + `<span id='songBtn' style='float: right;'>
         <img src='https://img.icons8.com/flat_round/24/000000/play--v1.png' /></span>`);
 
             // Gets Link for Theme Song
@@ -125,7 +127,12 @@ $(document).ready(function () {
             var parentDiv;
             isPlaying = true;
             //get pause button attribute to display
-            parentDiv = $(this).parent()[0].childNodes[5];
+            if (beenCleared) {
+                imgDataElNum = 2;
+            } else {
+                imgDataElNum = 5;
+            }
+            parentDiv = $(this).parent()[0].childNodes[imgDataElNum];
             //console.log(parentDiv)
             var pauseBtnData = parentDiv.getAttribute('data-pause');
             //set img src attribute to be pause button
@@ -169,6 +176,7 @@ $(document).ready(function () {
     })
 
     $('#remove').on('click', function () {
+        beenCleared = true;
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
         localStorage.setItem('playlist', []);
