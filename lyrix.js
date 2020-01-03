@@ -1,7 +1,7 @@
 //Comment this out.  Only for function testing
-//$(document).ready(function () {  
-//
-
+$(document).ready(function () {  
+getLyrix("blues traveler", "hook");
+})
 function getLyrix(artist, song) {
     console.log("getLyrix function was called")
     if (artist != '' || song != '') {
@@ -32,13 +32,9 @@ function postToHtml(response){
         var myLyrixString = JSON.stringify(response.message.body.lyrics.lyrics_body);//response.message.body.lyrics.lyrics_body not working
         console.log(myLyrixString);
         var myEscapedLyrixString = myLyrixString.replace(/\\n/g, "<br>")
-        .replace(/\\'/g, "'")
-        .replace(/\\"/g, '"')
-        .replace(/\\&/g, "\\&")
-        .replace(/\\r/g, "\\r")
-        .replace(/\\t/g, "\\t")
-        .replace(/\\b/g, "\\b")
-        .replace(/\\f/g, "\\f");
+        .replace(/\\'|\\"|\\&|\\r|\\t|\\b|\\f/g,function(x){
+            return x.slice(1);
+        } )
         console.log(myEscapedLyrixString);
         $("#songLyrix").html(myEscapedLyrixString.slice(1, myEscapedLyrixString.length - 1));
         //$("#songLyrix").append(response.message.body.lyrics_copyright)
