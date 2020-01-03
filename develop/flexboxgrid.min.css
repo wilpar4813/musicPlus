@@ -55,10 +55,6 @@ hr{
 }
 /* The following css is for the main body of code */
 
-#mainContainer{
-   
-}
-
 .row{
     margin:20px;
     border-radius: .7rem;
@@ -126,12 +122,14 @@ hr{
     flex:1;
     background:lightgray;
     min-height: 100px;
+    padding:10px;
 }
 
 #lyrix{
     flex:1;
     background:lightgray;
     min-height: 100px;
+    padding:10px;
 }
 
 @media only screen and (max-width: 520px) {
