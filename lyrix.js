@@ -1,7 +1,7 @@
 //Comment this out.  Only for function testing
-$(document).ready(function () {  
-getLyrix("blues traveler", "hook");
-})
+// $(document).ready(function () {  
+// getLyrix("blues traveler", "hook");
+// })
 function getLyrix(artist, song) {
     console.log("getLyrix function was called")
     if (artist != '' || song != '') {
@@ -13,9 +13,13 @@ function getLyrix(artist, song) {
             url: "https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=json&callback=callback&q_track=" + song + "&q_artist=" + artist + "&apikey=057fcae6cc1599a783e98bf3f2153ced",
             method: "GET"
         }).then(function (response) {
-            var data = JSON.parse(response);
-            postToHtml(data);
-            
+            if(JSON.parse(response).message.header.status_code != 404){
+                var data = JSON.parse(response);
+                postToHtml(data);            
+            }else{
+                var data = { message: {body: {lyrics: {lyrics_body: "Lyrics Not Available!"}}}};
+                postToHtml(data);
+            }
         });
        
     } else { // Error message if user doesn't enter anything
