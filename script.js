@@ -176,6 +176,8 @@ $(document).ready(function () {
     })
 
     $('#add').on('click', function (e) {
+        //set cleared boolean
+        beenCleared = true;
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
