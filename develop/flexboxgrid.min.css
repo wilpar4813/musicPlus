@@ -1,6 +1,7 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
     margin:0 auto;
+    background-color:black;
 }
 
 h1{
@@ -74,7 +75,7 @@ hr{
     display: flex;
     flex:1;
     flex-wrap: wrap;
-    background: lightgray;
+    background: black;
 }
 
 #songSpot{
@@ -115,7 +116,7 @@ hr{
 #bottomRow{
     display:flex;
     flex:1;
-    background:white;
+    background:black;
 }
 
 #playlist{
