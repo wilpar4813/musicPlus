@@ -1,5 +1,7 @@
 #songSpot{
     padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 #playlistItem {
@@ -11,4 +13,9 @@
 
 #album{
     margin-top: 8px;
+}
+
+#songTitle {
+    font-size: 1.5rem;
+    color: black;
 }

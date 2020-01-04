@@ -24,12 +24,12 @@ $(document).ready(function () {
             url: "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist,
             method: "GET"
         }).then(function (response) {
-            console.log(response);
+            //console.log(response);
             //create song div
             for (var i = 0; (i < response.data.length && i < 10); i++) {
                 artistName = response.data[i].artist.name;
                 var titleDiv = $(`<div class="column" id="songSpot" data-number=${i} data-preview=${response.data[i].preview} >`);
-                titleDiv.html("Title: <span id='songTitle'>" + response.data[i].title + "<span>");
+                titleDiv.html("<span id='songTitle'>" + response.data[i].title + "<span>");
                 var albumDiv = $('<div id="album">');
                 albumDiv.text("Album: " + response.data[i].album.title);
                 //titleDiv.append(albumDiv);
@@ -40,14 +40,16 @@ $(document).ready(function () {
 
     function selectToggle(compareSong) {
         //console.log(compareSong);
+        $("#songLyrix").html('');
         //get song lyrics
-        getLyrix(foundSong, artistName);
+        //console.log(compareSong)
+        getLyrix(compareSong, artistName);
 
         if (addSongArr.length > 0) {
             for (var i = 0; i < addSongArr.length; i++) {
                 //console.log(addSongArr[i].title)
                 //console.log(compareSong.slice(7))
-                if (addSongArr[i].title === compareSong.slice(7)) {
+                if (addSongArr[i].title === compareSong) {
                     foundSongName = addSongArr[i].title;
                     foundSong = true;
                 }
@@ -56,17 +58,15 @@ $(document).ready(function () {
         if (!foundSong) {
             //console.log(compareSong)
             //set background color of song div to blue
-            clickThis.attr('style', 'background: blue;');
+            clickThis.attr('style', 'background: #5a5aec;');
             //push selected song title in array
             addSongArr.push({
                 id: clickThis.attr('data-number'),
-                title: clickThis.text().slice(7),
+                title: clickThis.text(),
                 preview: clickThis.attr('data-preview'),
                 artist: artistName
             });
             //console.log(addSongArr);
-            //save playlist array to local storage;
-            localStorage.setItem('playlist', JSON.stringify(addSongArr));
         } else {
             clickThis.attr('style', 'background: darkgrey;');
             //remove selected song title out of array
@@ -91,6 +91,10 @@ $(document).ready(function () {
     }
 
     function addToPlaylist() {
+        //this function stops music so set var to not playing i.e. false
+        isPlaying = false;
+        //save playlist array to local storage;
+        localStorage.setItem('playlist', JSON.stringify(addSongArr));
         //add playlist array to playlist div
         var playlistEl = $('#playlist');
         addSongArr.forEach(function (val) {
