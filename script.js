@@ -146,7 +146,7 @@ $(document).ready(function () {
                 imgDataElNum = 5;
             }
             parentDiv = $(this).parent()[0].childNodes[imgDataElNum];
-            //console.log(parentDiv)
+            console.log($(this).parent()[0])
             var pauseBtnData = parentDiv.getAttribute('data-pause');
             //set img src attribute to be pause button
             var pauseLocale = $(this)[0].childNodes[1].childNodes[1];
