@@ -65,7 +65,7 @@ email: tripp.parham@me.com
 ​
 ​
 ​
-***Troubleshooting[3]***
+***Troubleshooting[5]***
 - The correct songs are displayed when artist is entered.
 - If the artist is not in the database a message is displayed.
 - When a song is selected, it is correctly added to the playlist.
