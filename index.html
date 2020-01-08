@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="ie=edge" http-equiv="X-UA-Compatible">
-        <!-- <link href="https://cdn.jsdelivr.net/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" type="text/css"> -->
-        <link href="develop/flexboxgrid.min.css" rel="stylesheet" type="text/css">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <!-- <link href="https://cdn.jsdelivr.net/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="develop/flexboxgrid.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
 
-        <link rel="stylesheet" href="develop/style.css">
-        <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-        <title>MusicPlus</title>
+    <link rel="stylesheet" href="develop/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <title>MusicPlus</title>
+  </head>
+  <body>
+    <div class="container" id="header">
+      <div id="title">MusicPlus</div>
+      <div id="searchForm">
+        <input
+          class="st-search-input search-field"
+          id="searchInput"
+          placeholder="Search Artists"
+          type="text"
+        />
+        <button id="searchButton" type="button"></button>
+      </div>
+    </div>
+    <div class="container" id="mainContainer">
+      <h1>Select Songs</h1>
+      <hr />
+      <div class="row" id="songRow"></div>
 
-    </head>
-    <body>
-        <div class="container" id="header">
-            <div id="title">MusicPlus</div>
-            <form id="searchForm">
-                <input class="st-search-input search-field" id="searchInput" placeholder="Search Artists" type="text"/>
-                <button id="searchButton" type="button"></button>
-            </form>
+      <div class="row" id="songListRow">
+        <button type="button" id="add">Add to Playlist</button>
+        <button type="button" id="remove">Remove from Playlist</button>
+      </div>
+      <div class="row" id="bottomRow">
+        <div class="column" id="playlist">
+          <h1>PlayList</h1>
+          <hr />
         </div>
-        <div class="container" id="mainContainer">
-
-            <h1>Select Songs</h1>
-            <hr>
-            <div class="row" id="songRow">
-            </div>
-            
-            <div class="row" id="songListRow">
-                <button type="button" id="add">Add to Playlist</button>
-                <button type="button" id="remove">Remove from Playlist</button>
-            </div>
-            <div class="row" id="bottomRow">
-                <div class="column" id="playlist">
-                    <h1>PlayList</h1>
-                    <hr>
-                </div>
-                <div class="column" id="lyrix">
-                    <h1>Lyrics</h1>
-                        <div id = "songLyrix"></div>
-                    <hr>
-                </div>
-            </div>
-
+        <div class="column" id="lyrix">
+          <h1>Lyrics</h1>
+          <div id="songLyrix"></div>
+          <hr />
         </div>
-       
-        <script src="./script.js"></script>
-        <script src="lyrix.js"></script>
+      </div>
+    </div>
 
-    </body>
+    <script src="./script.js"></script>
+    <script src="lyrix.js"></script>
+  </body>
 </html>
