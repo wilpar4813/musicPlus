@@ -146,7 +146,8 @@ $(document).ready(function () {
                 imgDataElNum = 5;
             }
             parentDiv = $(this).parent()[0].childNodes[imgDataElNum];
-            console.log($(this).parent()[0])
+            // console.log(imgDataElNum)
+            // console.log(thisEl.parent()[0].childNodes)
             var pauseBtnData = parentDiv.getAttribute('data-pause');
             //set img src attribute to be pause button
             var pauseLocale = $(this)[0].childNodes[1].childNodes[1];
@@ -176,6 +177,8 @@ $(document).ready(function () {
     })
 
     $('#add').on('click', function (e) {
+        //set cleared boolean
+        beenCleared = true;
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
