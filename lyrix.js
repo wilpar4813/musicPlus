@@ -1,5 +1,3 @@
-//Comment this out.  Only for function testing
-
 function getLyrix(artist, song) {
     //console.log("getLyrix function was called")
     if (artist != '' || song != '') {
