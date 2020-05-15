@@ -1,6 +1,7 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif; 
     margin:0 auto;
+    background-color:black;
 }
 
 h1{
@@ -74,7 +75,7 @@ hr{
     display: flex;
     flex:1;
     flex-wrap: wrap;
-    background: lightgray;
+    background: black;
 }
 
 #songSpot{
@@ -115,25 +116,41 @@ hr{
 #bottomRow{
     display:flex;
     flex:1;
-    background:white;
+    background:black;
 }
 
 #playlist{
     flex:1;
     background:lightgray;
     min-height: 100px;
+<<<<<<< HEAD
     padding:10px;
+=======
+    padding: 10px;
+>>>>>>> 03872c6f9c1a098604c107971e624f5b7c9be479
 }
 
 #lyrix{
     flex:1;
     background:lightgray;
     min-height: 100px;
+<<<<<<< HEAD
     padding:10px;
+=======
+    padding: 10px;
+>>>>>>> 03872c6f9c1a098604c107971e624f5b7c9be479
 }
 
 @media only screen and (max-width: 520px) {
     header{
         display: none;
     }
+  }
+
+  #songLyrix{
+      margin-top: 20px;
+  }
+
+  hr{
+      margin-bottom:  20px;
   }

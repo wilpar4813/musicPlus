@@ -11,6 +11,7 @@ $(document).ready(function () {
     var isPlaying = false;
     var imgDataElNum;
     var beenCleared = false;
+    var artistName;
 
     $('#searchButton').on('click', function () {
         $('#songRow').empty();
@@ -26,8 +27,9 @@ $(document).ready(function () {
             //console.log(response);
             //create song div
             for (var i = 0; (i < response.data.length && i < 10); i++) {
+                artistName = response.data[i].artist.name;
                 var titleDiv = $(`<div class="column" id="songSpot" data-number=${i} data-preview=${response.data[i].preview} >`);
-                titleDiv.html("Title: <span id='songTitle'>" + response.data[i].title + "<span>");
+                titleDiv.html("<span id='songTitle'>" + response.data[i].title + "<span>");
                 var albumDiv = $('<div id="album">');
                 albumDiv.text("Album: " + response.data[i].album.title);
                 //titleDiv.append(albumDiv);
@@ -38,12 +40,16 @@ $(document).ready(function () {
 
     function selectToggle(compareSong) {
         //console.log(compareSong);
+        $("#songLyrix").html('');
+        //get song lyrics
+        //console.log(compareSong)
+        getLyrix(compareSong, artistName);
 
         if (addSongArr.length > 0) {
             for (var i = 0; i < addSongArr.length; i++) {
                 //console.log(addSongArr[i].title)
                 //console.log(compareSong.slice(7))
-                if (addSongArr[i].title === compareSong.slice(7)) {
+                if (addSongArr[i].title === compareSong) {
                     foundSongName = addSongArr[i].title;
                     foundSong = true;
                 }
@@ -52,16 +58,15 @@ $(document).ready(function () {
         if (!foundSong) {
             //console.log(compareSong)
             //set background color of song div to blue
-            clickThis.attr('style', 'background: blue;');
+            clickThis.attr('style', 'background: #5a5aec;');
             //push selected song title in array
             addSongArr.push({
                 id: clickThis.attr('data-number'),
-                title: clickThis.text().slice(7),
-                preview: clickThis.attr('data-preview')
+                title: clickThis.text(),
+                preview: clickThis.attr('data-preview'),
+                artist: artistName
             });
             //console.log(addSongArr);
-            //save playlist array to local storage;
-            localStorage.setItem('playlist', JSON.stringify(addSongArr));
         } else {
             clickThis.attr('style', 'background: darkgrey;');
             //remove selected song title out of array
@@ -86,6 +91,10 @@ $(document).ready(function () {
     }
 
     function addToPlaylist() {
+        //this function stops music so set var to not playing i.e. false
+        isPlaying = false;
+        //save playlist array to local storage;
+        localStorage.setItem('playlist', JSON.stringify(addSongArr));
         //add playlist array to playlist div
         var playlistEl = $('#playlist');
         addSongArr.forEach(function (val) {
@@ -95,6 +104,7 @@ $(document).ready(function () {
             var preview = val.preview
             div.attr('id', 'playlistItem');
             div.attr('data-title', val.title);
+            div.attr('data-artist', val.artist);
             div.attr('data-play', 'https://img.icons8.com/flat_round/24/000000/play--v1.png');
             div.attr('data-pause', 'https://img.icons8.com/flat_round/24/000000/pause--v1.png')
             div.html(val.title + `<span id='songBtn' style='float: right;'>
@@ -123,7 +133,10 @@ $(document).ready(function () {
 
         if (!isPlaying) {
             //console.log(playMe)
+            //onsole.log(thisEl[0])
             playMe.play();
+            //add lyrics
+            getLyrix(thisEl[0].getAttribute('data-title'), thisEl[0].getAttribute('data-artist'))
             var parentDiv;
             isPlaying = true;
             //get pause button attribute to display
@@ -133,7 +146,8 @@ $(document).ready(function () {
                 imgDataElNum = 5;
             }
             parentDiv = $(this).parent()[0].childNodes[imgDataElNum];
-            //console.log(parentDiv)
+            // console.log(imgDataElNum)
+            // console.log(thisEl.parent()[0].childNodes)
             var pauseBtnData = parentDiv.getAttribute('data-pause');
             //set img src attribute to be pause button
             var pauseLocale = $(this)[0].childNodes[1].childNodes[1];
@@ -163,6 +177,8 @@ $(document).ready(function () {
     })
 
     $('#add').on('click', function (e) {
+        //set cleared boolean
+        beenCleared = true;
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
