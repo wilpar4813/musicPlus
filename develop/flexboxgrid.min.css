@@ -123,12 +123,14 @@ hr{
     flex:1;
     background:lightgray;
     min-height: 100px;
+    padding: 10px;
 }
 
 #lyrix{
     flex:1;
     background:lightgray;
     min-height: 100px;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 520px) {
