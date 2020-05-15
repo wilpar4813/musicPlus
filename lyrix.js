@@ -1,15 +1,5 @@
 //Comment this out.  Only for function testing
-<<<<<<< HEAD
-//$(document).ready(function () {  
-//getLyrix("blues traveler", "hook");
-//})
 
-
-=======
-// $(document).ready(function () {  
-// getLyrix("blues traveler", "hook");
-// })
->>>>>>> 03872c6f9c1a098604c107971e624f5b7c9be479
 function getLyrix(artist, song) {
     //console.log("getLyrix function was called")
     if (artist != '' || song != '') {
