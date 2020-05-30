@@ -11,8 +11,14 @@ As a music lover, you want the most simple way to build and save your favorite p
 
 ## Visuals
 ![Music Plus Image](./assets/img/musicPlus.png)
+
+
 ![Music Plus Image](./assets/img/musicPlus2.png)
+
+
 ![Music Plus Image](./assets/img/musicPlus3.png)
+
+
 ![Music Plus Image](./assets/img/musicPlus4.png)
 
 ## Installation
