@@ -26,10 +26,10 @@ $(document).ready(function () {
         }).then(function (response) {
             //console.log(response);
             //create song div
-            for (var i = 0; (i < response.data.length && i < 10); i++) {
+            for (var i = 0; (i < response.data.length ); i++) {
                 artistName = response.data[i].artist.name;
                 var titleDiv = $(`<div class="column" id="songSpot" data-number=${i} data-preview=${response.data[i].preview} >`);
-                titleDiv.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + response.data[i].album.cover + '");')
+                titleDiv.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + response.data[i].album.cover + '");');
                 titleDiv.html("<span id='songTitle'>" + response.data[i].title + "<span>");
                 var albumDiv = $('<div id="album">');
                 albumDiv.text("Album: " + response.data[i].album.title);
@@ -59,7 +59,7 @@ $(document).ready(function () {
         if (!foundSong) {
             //console.log(compareSong)
             //set background color of song div to blue
-            clickThis.attr('style', 'background: #5a5aec;');
+            clickThis.attr('style', 'border:5px solid purple;');
             //push selected song title in array
             addSongArr.push({
                 id: clickThis.attr('data-number'),
@@ -69,7 +69,7 @@ $(document).ready(function () {
             });
             //console.log(addSongArr);
         } else {
-            clickThis.attr('style', 'background: darkgrey;');
+            clickThis.attr('style', 'border:4px solid black;');
             //remove selected song title out of array
             //filter the array to create a new array minus the selected song
             newSongArr = addSongArr.filter(function (val) {
