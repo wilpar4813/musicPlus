@@ -31,8 +31,8 @@ $(document).ready(function () {
                 var titleDiv = $(`<div class="column" id="songSpot" data-number=${i} data-preview=${response.data[i].preview} >`);
                 titleDiv.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + response.data[i].album.cover + '");');
                 titleDiv.html("<span id='songTitle'>" + response.data[i].title + "<span>");
-                var albumDiv = $('<div id="album">');
-                albumDiv.text("Album: " + response.data[i].album.title);
+                // var albumDiv = $('<div id="album">');
+                // albumDiv.text("Album: " + response.data[i].album.title);
                 //titleDiv.append(albumDiv);
                 $('#songRow').append(titleDiv);
             }
