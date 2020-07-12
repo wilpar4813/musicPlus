@@ -16,6 +16,7 @@ $(document).ready(function () {
     $('#searchButton').on('click', function () {
         $('#songRow').empty();
         var artist = $('#searchInput').val();
+        
         $.ajax({
             headers: {
                 "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
@@ -24,7 +25,7 @@ $(document).ready(function () {
             url: "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist,
             method: "GET"
         }).then(function (response) {
-            //console.log(response);
+            console.log(response);
             //create song div
             for (var i = 0; (i < response.data.length ); i++) {
                 artistName = response.data[i].artist.name;
