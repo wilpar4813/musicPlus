@@ -13,8 +13,10 @@ hr{
     border:1px solid black;
 }
 #header{
-   
-   
+    position: fixed;
+    top:0;
+    width:100%;
+    z-index: 1;
     display:flex;
     background: black;
     color:black;
@@ -45,7 +47,7 @@ hr{
     display: flex;
     flex:2;
     font-size:20px;
-    /* padding:15px; */
+    padding-left:10px; 
     margin: auto 5px;
     border-radius: .7rem;
     height: 35px;
@@ -67,6 +69,10 @@ hr{
 }
 /* The following css is for the main body of code */
 
+#mainContainer{
+    margin-top: 55px;
+    
+}
 .row{
     /* margin:20px; */
     border-radius: .7rem;
