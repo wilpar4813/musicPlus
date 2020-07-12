@@ -12,7 +12,7 @@ hr{
     margin-right: 10%;
     border:1px solid black;
 }
-#header{
+.headerContainer{
     position: fixed;
     top:0;
     width:100%;
@@ -20,8 +20,10 @@ hr{
     display:flex;
     background: black;
     color:black;
-    height:5vh;
-    max-width: 1720px;
+    /* height:5vh; */
+    /* max-width: 1720px; */
+    margin-left: auto;
+    margin-right: auto;
     
 }
 #title{
