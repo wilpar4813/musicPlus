@@ -8,7 +8,7 @@
         <link href="develop/flexboxgrid.min.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
-        
+        <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@800;900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="develop/style.css">
         <script
@@ -21,22 +21,23 @@
     <body>
         <div class="container" id="header">
             <div id="title">MusicPlus</div>
+            <div class="row" id="songListRow">
+                <button type="button" id="add">Add to Playlist</button>
+                <button type="button" id="remove">Clear Playlist</button>
+            </div>
             <form id="searchForm">
-                <input class="st-search-input search-field" id="searchInput" placeholder="Search Artists" type="text"/>
+                <input class="st-search-input search-field" id="searchInput" placeholder="Search Artists or Title" type="text"/>
                 <button id="searchButton" type="button"></button>
             </form>
         </div>
         <div class="container" id="mainContainer">
 
-            <h1 style="color:white">Select Songs</h1>
-            <hr style="border:1px solid white">
+           
+        
             <div class="row" id="songRow">
             </div>
             
-            <div class="row" id="songListRow">
-                <button type="button" id="add">Add to Playlist</button>
-                <button type="button" id="remove">Clear Playlist</button>
-            </div>
+            
             <div class="row" id="bottomRow">
                 <div class="column" id="playlist">
                     <h1>PlayList</h1>
