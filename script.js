@@ -182,6 +182,7 @@ $(document).ready(function () {
     $('#add').on('click', function (e) {
         //set cleared boolean
         beenCleared = true;
+        $('#playlist').show();
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
@@ -196,6 +197,7 @@ $(document).ready(function () {
 
     $('#remove').on('click', function () {
         beenCleared = true;
+        $('#playlist').hide();
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
         $('#songRow').empty();
