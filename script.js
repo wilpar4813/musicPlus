@@ -13,7 +13,8 @@ $(document).ready(function () {
     var beenCleared = false;
     var artistName;
     $('#lyrix').hide();
-    $('#playlist').hide();
+
+    // $('#playlist').hide();
     $('#searchButton').on('click', function () {
         $('#songRow').empty();
         var artist = $('#searchInput').val();
@@ -128,6 +129,8 @@ $(document).ready(function () {
         if (addSongArr.length > 0) {
             fromLocal = true;
             addToPlaylist();
+        }else{
+            $('#playlist').hide();
         }
     }
 
