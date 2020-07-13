@@ -35,6 +35,7 @@ hr{
 }
 .navbar{
     background-color: black !important;
+    /* border-bottom: 1px solid white; */
 }
 
 .navbar-brand{
@@ -115,7 +116,10 @@ hr{
     flex:1;
     flex-wrap: wrap;
     background: black;
-    
+    overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  max-height:600px;
 }
 
 #songSpot{
@@ -212,7 +216,9 @@ hr{
         display: none;
     }
   }
-
+#songRow{
+    max-height: 450px;
+}
   #songLyrix{
       margin-top: 20px;
   }
