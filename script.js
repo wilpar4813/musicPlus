@@ -136,7 +136,7 @@ $(document).ready(function () {
 
         if (!isPlaying) {
             //console.log(playMe)
-            //onsole.log(thisEl[0])
+            //console.log(thisEl[0])
             playMe.play();
             //add lyrics
             getLyrix(thisEl[0].getAttribute('data-title'), thisEl[0].getAttribute('data-artist'))
@@ -198,6 +198,7 @@ $(document).ready(function () {
         beenCleared = true;
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
+        // $('#songRow').empty();
         localStorage.setItem('playlist', []);
         addSongArr = [];
         newSongArr = [];
