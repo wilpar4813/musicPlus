@@ -109,6 +109,7 @@ $(document).ready(function () {
             div.attr('data-artist', val.artist);
             div.attr('data-play', 'https://img.icons8.com/flat_round/24/000000/play--v1.png');
             div.attr('data-pause', 'https://img.icons8.com/flat_round/24/000000/pause--v1.png')
+            div.attr('data-delete', 'https://img.icons8.com/plasticine/100/000000/filled-trash.png')
             div.html(val.title + `<span id='songBtn' style='float: right;'>
         <img src='https://img.icons8.com/flat_round/24/000000/play--v1.png' /></span>`);
 
