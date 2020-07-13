@@ -169,7 +169,7 @@ hr{
 }
 
 #bottomRow{
-    display:flex;
+    display:block;
     flex:1;
     background:black;
 }
@@ -226,7 +226,7 @@ hr{
           margin-top: 20px;
       }
     body{
-        padding-top:160px;
+        padding-top:180px;
     }
       hr{
           margin-bottom:  20px;
