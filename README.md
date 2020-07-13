@@ -7,7 +7,7 @@
 *   Published: Saturday January 4th 2020
 
 ## Description
-As a music lover, you want the most simple way to build and save your favorite playlists.  MusicPlus is a place where you can do just that. Create Playlist! Search, play, and sing along to posted lyrics of your favorite musical artists.  This app uses a HTML, CSS, JavaScript and server-side API.
+As a music lover, you might wish you had a free and easy place to search music from your favorite artist or find lyrics to your favorite songs.  MusicPlus is a place where you can do just that. Easily search for artist or title names. Play a sample of the track, and sing along to lyrics of your favorite songs.  You can also create a list of favorite track samples.  This app uses a HTML, CSS, ,Bootstrap, JavaScript and server-side API.
 
 ## Visuals
 ![Music Plus Image](./assets/img/musicPlus.png)
