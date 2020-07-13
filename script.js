@@ -12,7 +12,7 @@ $(document).ready(function () {
     var imgDataElNum;
     var beenCleared = false;
     var artistName;
-
+    $('#lyrix').hide();
     $('#searchButton').on('click', function () {
         $('#songRow').empty();
         var artist = $('#searchInput').val();

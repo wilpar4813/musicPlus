@@ -10,9 +10,12 @@ function getLyrix(artist, song) {
             method: "GET"
         }).then(function (response) {
             if (JSON.parse(response).message.header.status_code != 404) {
+                $('#lyrix').show();
+                
                 var data = JSON.parse(response);
                 postToHtml(data);
             } else {
+                $('#lyrix').hide();
                 var data = { message: { body: { lyrics: { lyrics_body: "Lyrics Not Available!" } } } };
                 postToHtml(data);
             }

@@ -77,12 +77,13 @@ hr{
 }
 #searchButton{
     /* flex:1; */
-    background-image: url(../assets/img/searchIcon.png);
+    /* background-image: url(../assets/img/searchIcon.png); */
     background-size: 25px 25px;
     background-repeat: no-repeat;
     /* padding:17px 20px 17px 20px; */
     background-position: center; 
     background-color:#5a5aec;
+    color:white;
     height:35px;
     width:40px;
     /* margin: auto 5px; */
