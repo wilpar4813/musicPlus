@@ -13,6 +13,7 @@ $(document).ready(function () {
     var beenCleared = false;
     var artistName;
     $('#lyrix').hide();
+    $('#playlist').hide();
     $('#searchButton').on('click', function () {
         $('#songRow').empty();
         var artist = $('#searchInput').val();
