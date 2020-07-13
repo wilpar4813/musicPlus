@@ -199,6 +199,7 @@ $(document).ready(function () {
     $('#remove').on('click', function () {
         beenCleared = true;
         $('#playlist').hide();
+        $('#lyrix').hide();
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
         $('#songRow').empty();
