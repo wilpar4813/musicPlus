@@ -198,7 +198,8 @@ $(document).ready(function () {
         beenCleared = true;
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
-        // $('#songRow').empty();
+        $('#songRow').empty();
+        $('#songLyrix').empty();
         localStorage.setItem('playlist', []);
         addSongArr = [];
         newSongArr = [];

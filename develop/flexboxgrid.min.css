@@ -215,14 +215,21 @@ hr{
     header{
         display: none;
     }
-  }
-#songRow{
-    max-height: 450px;
-}
-  #songLyrix{
-      margin-top: 20px;
+    #songRow{
+        max-height: 450px;
+        max-width: 225px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+      #songLyrix{
+          margin-top: 20px;
+      }
+    body{
+        padding-top:160px;
+    }
+      hr{
+          margin-bottom:  20px;
+      }
   }
 
-  hr{
-      margin-bottom:  20px;
-  }
