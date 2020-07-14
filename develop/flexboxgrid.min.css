@@ -212,6 +212,9 @@ hr{
 #bottomRow{
     display:block;
 }
+body{
+    padding-top:180px;
+}
 }
 
 @media only screen and (max-width: 520px) {
@@ -225,14 +228,18 @@ hr{
         margin-right: auto;
         
     }
+
       #songLyrix{
           margin-top: 20px;
       }
-    body{
-        padding-top:180px;
-    }
+   
       hr{
           margin-bottom:  20px;
       }
   }
 
+  @media only screen and (max-width: 380px) {
+    #songListRow{
+        margin-left:-11px;
+    }
+}
