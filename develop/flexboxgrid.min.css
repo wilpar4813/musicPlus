@@ -225,6 +225,7 @@ hr{
         margin-right: auto;
         
     }
+
       #songLyrix{
           margin-top: 20px;
       }
@@ -236,3 +237,8 @@ hr{
       }
   }
 
+  @media only screen and (max-width: 380px) {
+    #songListRow{
+        margin-left:-11px;
+    }
+}
