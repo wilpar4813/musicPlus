@@ -121,6 +121,8 @@ hr{
   overflow-y: auto;
   text-align: center;
   max-height:600px;
+  margin-bottom: 50px;
+  
 }
 
 #songSpot{
@@ -226,7 +228,7 @@ hr{
     display:block;
 }
 body{
-    padding-top:180px;
+    padding-top:120px;
 }
 }
 

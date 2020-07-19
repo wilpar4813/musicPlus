@@ -43,6 +43,7 @@ $(document).ready(function () {
                 //titleDiv.append(albumDiv);
                 
                 $('#songRow').append(titleDiv);
+                $('#songRow').attr('style', 'padding:20px;margin-bottom:20px;');
             }
         })
     })
@@ -68,6 +69,7 @@ $(document).ready(function () {
             //console.log(compareSong)
             //set background color of song div to blue
             clickThis.attr('style', 'border:5px solid purple;');
+            // clickThis.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + addSongArr[i].album.cover + '");');
             //push selected song title in array
             addSongArr.push({
                 id: clickThis.attr('data-number'),
@@ -100,6 +102,7 @@ $(document).ready(function () {
     }
 
     function addToPlaylist() {
+        $('#remove').show();
         //this function stops music so set var to not playing i.e. false
         isPlaying = false;
         //save playlist array to local storage;
