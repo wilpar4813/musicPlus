@@ -202,7 +202,7 @@ $(document).ready(function () {
         $('#playlist').empty();
         //re-add header and hr
         var h1 = $('<h1>');
-        h1.text('PlayList');
+        h1.text('BriefList');
         var hr = $('<hr>');
         $('#playlist').append(h1);
         $('#playlist').append(hr);

@@ -204,13 +204,14 @@ hr{
 #lyrix{
     flex:1;
     background:rgba(12, 70, 34, 0.5);
+    border-radius: 15px;
     min-height: 100px;
     padding: 10px;
     color: white;
     font-size:17px;
     font-weight:bolder;
     font-family: 'MuseoModerno', cursive !important;   
-    padding-bottom: 60px;
+    padding:10px;
     margin-top:90px;
 
 }
