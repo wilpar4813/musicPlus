@@ -86,8 +86,9 @@ hr{
     color:white;
     height:35px;
     width:35px;
-    margin: auto;
+    margin: auto 5px;
     border-radius: .7rem;
+    padding:0px !important;
     /* color:white !important; */
 }
 /* The following css is for the main body of code */
