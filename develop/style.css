@@ -5,13 +5,14 @@
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 15px;
 }
 
 #playlistItem {
     padding: 10px;
     margin: 5px;
     box-sizing: border-box;
-    font-size: 25px;
+    font-size: 20px;
     /* border: 1px solid white; */
 }
 
@@ -22,11 +23,11 @@
 #songTitle {
     position: absolute;
     bottom: 0px;
-    font-size: 1rem;
+    font-size: 12px;
     font-weight:bolder;
     color: white;
-    background-color: black;
-    border-radius: 20px;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 15px;
     padding:7px;
     width:50%;
     

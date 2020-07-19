@@ -93,7 +93,7 @@ hr{
 /* The following css is for the main body of code */
 
 #mainContainer{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -121,6 +121,8 @@ hr{
   overflow-y: auto;
   text-align: center;
   max-height:600px;
+  margin-bottom: 50px;
+  
 }
 
 #songSpot{
@@ -143,27 +145,38 @@ hr{
 
 }
 #add {
-    /* width: 170px; */
+    width: 100%;
     /* height:50px; */
-    margin: 5px;
+    margin: auto;
+    padding:10px;
     font-weight: bold;
     /* padding:10px; */
-    font-size:16px;
+    font-size:20px;
     font-weight: 600;
     border-radius: .7rem;
     vertical-align: middle;
     background: rgba(2, 155, 61, 0.5);
     color:white;
+    font-family: 'MuseoModerno', cursive !important; 
+
     
 }
 
 #remove {
     /* width: 170px; */
     /* height:50px; */
-    margin: 5px;
+    width: auto;
+    /* height:50px; */
+    float:right;
+   
+    margin-right:10px;
+    margin-bottom: 20px;
+    font-family: 'MuseoModerno', cursive !important; 
+    padding:5px;
+    text-align: center;
     font-weight: bold;
     /* padding:10px; */
-    font-size:16px;
+    font-size:15px;
     font-weight: 600;
     border-radius: .7rem;
     vertical-align: middle;
@@ -191,13 +204,16 @@ hr{
 #lyrix{
     flex:1;
     background:rgba(12, 70, 34, 0.5);
+    border-radius: 15px;
     min-height: 100px;
     padding: 10px;
     color: white;
-    font-size:35px;
+    font-size:17px;
     font-weight:bolder;
     font-family: 'MuseoModerno', cursive !important;   
-    padding-bottom: 60px;
+    padding:10px;
+    margin-top:90px;
+
 }
 
 .footer{
@@ -213,7 +229,7 @@ hr{
     display:block;
 }
 body{
-    padding-top:180px;
+    padding-top:100px;
 }
 }
 

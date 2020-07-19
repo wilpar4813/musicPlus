@@ -13,10 +13,13 @@ $(document).ready(function () {
     var beenCleared = false;
     var artistName;
     $('#lyrix').hide();
-
+    $('#add').hide();
+    $('#remove').hide();
     // $('#playlist').hide();
-    $('#searchButton').on('click', function () {
+    $('#searchButton').on('click', function (event) {
+        // e.preventDefault();
         $('#songRow').empty();
+        
         var artist = $('#searchInput').val();
         
         $.ajax({
@@ -28,6 +31,7 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            $('#add').show();
             //create song div
             for (var i = 0; (i < response.data.length ); i++) {
                 artistName = response.data[i].artist.name;
@@ -37,7 +41,9 @@ $(document).ready(function () {
                 // var albumDiv = $('<div id="album">');
                 // albumDiv.text("Album: " + response.data[i].album.title);
                 //titleDiv.append(albumDiv);
+                
                 $('#songRow').append(titleDiv);
+                $('#songRow').attr('style', 'padding:20px;margin-bottom:20px;');
             }
         })
     })
@@ -63,6 +69,7 @@ $(document).ready(function () {
             //console.log(compareSong)
             //set background color of song div to blue
             clickThis.attr('style', 'border:5px solid purple;');
+            // clickThis.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + addSongArr[i].album.cover + '");');
             //push selected song title in array
             addSongArr.push({
                 id: clickThis.attr('data-number'),
@@ -95,6 +102,7 @@ $(document).ready(function () {
     }
 
     function addToPlaylist() {
+        $('#remove').show();
         //this function stops music so set var to not playing i.e. false
         isPlaying = false;
         //save playlist array to local storage;
@@ -120,9 +128,11 @@ $(document).ready(function () {
 
             audioElement.attr("src", preview);
             div.append(audioElement);
-            playlistEl.append(div)
+            playlistEl.append(div);
 
         })
+        // var clearBtn = $('<button type="button" id="remove">Clear Playlist</button>');
+        // playlistEl.append(clearBtn);
     }
 
     function initPlaylist() {
@@ -187,11 +197,12 @@ $(document).ready(function () {
         //set cleared boolean
         beenCleared = true;
         $('#playlist').show();
+        $('#remove').show();
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
         var h1 = $('<h1>');
-        h1.text('PlayList');
+        h1.text('BriefList');
         var hr = $('<hr>');
         $('#playlist').append(h1);
         $('#playlist').append(hr);
@@ -200,8 +211,16 @@ $(document).ready(function () {
     })
 
     $('#remove').on('click', function () {
+        console.log("clear button hit");
+        confirmation = confirm("Confirm to Delete");
+        console.log(confirmation);
+        if(confirmation === false){
+            return;
+        };
         beenCleared = true;
         $('#playlist').hide();
+        $('#remove').hide();
+        $('#add').hide();
         $('#lyrix').hide();
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
