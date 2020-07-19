@@ -93,7 +93,7 @@ hr{
 /* The following css is for the main body of code */
 
 #mainContainer{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     margin-left: auto;
     margin-right: auto;
 }
@@ -207,7 +207,7 @@ hr{
     min-height: 100px;
     padding: 10px;
     color: white;
-    font-size:35px;
+    font-size:17px;
     font-weight:bolder;
     font-family: 'MuseoModerno', cursive !important;   
     padding-bottom: 60px;
@@ -228,7 +228,7 @@ hr{
     display:block;
 }
 body{
-    padding-top:120px;
+    padding-top:100px;
 }
 }
 
