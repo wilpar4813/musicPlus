@@ -65,7 +65,7 @@ hr{
     flex:1;
     font-size:15px;
     padding-left:10px; 
-    margin: auto 5px;
+    margin: auto;
     border-radius: .7rem;
     height: 35px;
     
@@ -85,8 +85,8 @@ hr{
     background-color:#5a5aec;
     color:white;
     height:35px;
-    width:40px;
-    /* margin: auto 5px; */
+    width:35px;
+    margin: auto;
     border-radius: .7rem;
     /* color:white !important; */
 }

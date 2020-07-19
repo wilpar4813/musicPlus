@@ -2,13 +2,24 @@
 
 *   README
 *   MusicBrief
-*   Version: 1.0.0
+*   Version: 2.0.0
 *   Development By Kelsie Langston, Josh Faison, and Tripp Parham
-*   Published: Saturday January 4th 2020
+*   Published: Saturday June 18th 2020
 
 ## Description
-As a music lover, you might wish you had a free and easy place to search music from your favorite artist or find lyrics to your favorite songs.  MusicPlus is a place where you can do just that. Easily search for artist or title names. Play a sample of the track, and sing along to lyrics of your favorite songs.  You can also create a list of favorite track samples.  This app uses a HTML, CSS, ,Bootstrap, JavaScript, Jquery, server-side API, and responsive web design.
+As a music lover, you might wish you had a free and easy place to search music from your favorite artist or find lyrics to your favorite songs.  With a new look and a new name, MusicBrief is a place where you can do just that. Easily search for artist or title names. Play a sample of the track, and sing along to lyrics of your favorite songs.  You can also create a list of favorite track samples.  This app uses a HTML, CSS, ,Bootstrap, JavaScript, Jquery, server-side API, and responsive web design.
 ## Visuals
+
+## Version 2
+
+![Music Brief Image](./assets/img/musicBrief1.png)
+
+![Music Brief Image](./assets/img/musicBrief2.png)
+
+![Music Brief Image](./assets/img/musicBrief3.png)
+
+## Version 1
+
 ![Music Plus Image](./assets/img/musicPlus.png)
 
 
@@ -78,6 +89,7 @@ As a music lover, you might wish you had a free and easy place to search music f
     https://www.iconsdb.com/black-icons/search-13-icon.html
 
 ## Versions
-Verion 1.0.0 Released Saturday January 4th, 2020
+Version 1.0.0 Released Saturday January 4th, 2020
+Version 2.0.0 Released Saturday June 18th, 2020
 
 
