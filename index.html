@@ -58,10 +58,8 @@
                     id="navbarSupportedContent"
                 >
                     <div class="row" id="songListRow">
-                        <button type="button" id="add">Add to Playlist</button>
-                        <button type="button" id="remove">
-                            Clear Playlist
-                        </button>
+                        
+                        
                     </div>
 
                     <form id="searchForm">
@@ -73,14 +71,19 @@
             <div class="jumbotron">
             <div class="container" id="mainContainer">
                 <div class="row" id="songRow"></div>
-
+                <button type="button" id="add">Add to Playlist</button>
                 <div class="row" id="bottomRow">
                     <div class="column" id="playlist">
-                        <h1>Favorites</h1>
-                        <hr />
-                    </div>
-                    <div class="column" id="lyrix">
                         <h1>Playlist</h1>
+                        
+                        <hr />
+                        
+                    </div>
+                    <button type="button" id="remove">
+                        Clear Playlist
+                    </button>
+                    <div class="column" id="lyrix">
+                        <h1>Lyrics</h1>
                         <hr />
                         <div id="songLyrix"></div>
                     </div>

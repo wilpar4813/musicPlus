@@ -143,27 +143,38 @@ hr{
 
 }
 #add {
-    /* width: 170px; */
+    width: 100%;
     /* height:50px; */
-    margin: 5px;
+    margin: auto;
+    padding:10px;
     font-weight: bold;
     /* padding:10px; */
-    font-size:16px;
+    font-size:20px;
     font-weight: 600;
     border-radius: .7rem;
     vertical-align: middle;
     background: rgba(2, 155, 61, 0.5);
     color:white;
+    font-family: 'MuseoModerno', cursive !important; 
+
     
 }
 
 #remove {
     /* width: 170px; */
     /* height:50px; */
-    margin: 5px;
+    width: auto;
+    /* height:50px; */
+    float:right;
+   
+    margin-right:10px;
+    margin-bottom: 20px;
+    font-family: 'MuseoModerno', cursive !important; 
+    padding:5px;
+    text-align: center;
     font-weight: bold;
     /* padding:10px; */
-    font-size:16px;
+    font-size:15px;
     font-weight: 600;
     border-radius: .7rem;
     vertical-align: middle;
@@ -198,6 +209,8 @@ hr{
     font-weight:bolder;
     font-family: 'MuseoModerno', cursive !important;   
     padding-bottom: 60px;
+    margin-top:90px;
+
 }
 
 .footer{

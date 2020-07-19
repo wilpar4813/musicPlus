@@ -13,10 +13,13 @@ $(document).ready(function () {
     var beenCleared = false;
     var artistName;
     $('#lyrix').hide();
-
+    $('#add').hide();
+    $('#remove').hide();
     // $('#playlist').hide();
-    $('#searchButton').on('click', function () {
+    $('#searchButton').on('click', function (event) {
+        // e.preventDefault();
         $('#songRow').empty();
+        
         var artist = $('#searchInput').val();
         
         $.ajax({
@@ -28,6 +31,7 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            $('#add').show();
             //create song div
             for (var i = 0; (i < response.data.length ); i++) {
                 artistName = response.data[i].artist.name;
@@ -37,6 +41,7 @@ $(document).ready(function () {
                 // var albumDiv = $('<div id="album">');
                 // albumDiv.text("Album: " + response.data[i].album.title);
                 //titleDiv.append(albumDiv);
+                
                 $('#songRow').append(titleDiv);
             }
         })
@@ -120,9 +125,11 @@ $(document).ready(function () {
 
             audioElement.attr("src", preview);
             div.append(audioElement);
-            playlistEl.append(div)
+            playlistEl.append(div);
 
         })
+        // var clearBtn = $('<button type="button" id="remove">Clear Playlist</button>');
+        // playlistEl.append(clearBtn);
     }
 
     function initPlaylist() {
@@ -187,6 +194,7 @@ $(document).ready(function () {
         //set cleared boolean
         beenCleared = true;
         $('#playlist').show();
+        $('#remove').show();
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
@@ -200,8 +208,16 @@ $(document).ready(function () {
     })
 
     $('#remove').on('click', function () {
+        console.log("clear button hit");
+        confirmation = confirm("Confirm to Delete");
+        console.log(confirmation);
+        if(confirmation === false){
+            return;
+        };
         beenCleared = true;
         $('#playlist').hide();
+        $('#remove').hide();
+        $('#add').hide();
         $('#lyrix').hide();
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
