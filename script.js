@@ -15,6 +15,7 @@ $(document).ready(function () {
     $('#lyrix').hide();
     $('#add').hide();
     $('#remove').hide();
+    $('#clear').hide();
     // $('#playlist').hide();
     $('#searchButton').on('click', function (event) {
         // e.preventDefault();
@@ -32,6 +33,7 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             $('#add').show();
+            $('#clear').show();
             //create song div
             for (var i = 0; (i < response.data.length ); i++) {
                 artistName = response.data[i].artist.name;
@@ -209,6 +211,14 @@ $(document).ready(function () {
         $('#playlist').append(hr);
         //add to playlist
         addToPlaylist();
+    })
+
+    $('#clear').on('click', function (e) {
+        //set cleared boolean
+        beenCleared = true;
+        $('#songRow').empty();
+        $('#clear').hide();
+        $('#add').hide();
     })
 
     $('#remove').on('click', function () {
