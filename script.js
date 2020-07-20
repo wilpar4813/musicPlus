@@ -202,7 +202,7 @@ $(document).ready(function () {
         //remove previous playlist
         $('#playlist').empty();
         //re-add header and hr
-        var h1 = $('<h1>');
+        var h1 = $('<h2>');
         h1.text('SnapTrax Repo');
         var hr = $('<hr>');
         $('#playlist').append(h1);
