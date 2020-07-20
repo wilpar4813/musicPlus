@@ -153,9 +153,9 @@ hr{
 #add {
     width: 50%;
     /* height:50px; */
-    margin: 10px auto;
+    margin: 5px;
     padding:10px;
-    font-weight: bold;
+    /* font-weight: bold; */
     /* padding:10px; */
     font-size:20px;
     font-weight: 600;
@@ -164,15 +164,15 @@ hr{
     background: rgba(2, 155, 61, 0.5);
     color:white;
     font-family: 'MuseoModerno', cursive !important; 
-
+    margin-left: auto;
     
 }
 
 #clear {
     width: 50%;
     /* height:50px; */
-    margin: 10px auto;
-    padding:10px;
+    margin: 5px;
+    /* padding:10px; */
     font-weight: bold;
     /* padding:10px; */
     font-size:20px;
@@ -182,6 +182,7 @@ hr{
     background: rgba(155, 94, 2, 0.5);
     color:white;
     font-family: 'MuseoModerno', cursive !important; 
+    margin-right: auto;
 
     
 }
