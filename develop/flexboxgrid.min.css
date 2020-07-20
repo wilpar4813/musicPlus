@@ -237,11 +237,14 @@ body{
 }
 
 @media only screen and (max-width: 520px) {
+    h2{
+        font-size: 30px;
+    }
     header{
         display: none;
     }
     #songRow{
-        max-height: 450px;
+        max-height: 350px;
         max-width: 225px;
         padding:0 !important;
         margin-left: auto;
