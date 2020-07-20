@@ -266,7 +266,7 @@ body{
         display: none;
     }
     #songRow{
-        max-height: 400px;
+        max-height: 300px;
         max-width: 225px;
         padding:0 !important;
         margin-left: auto;
