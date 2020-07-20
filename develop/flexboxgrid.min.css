@@ -78,7 +78,7 @@ hr{
 #searchButton{
     /* flex:1; */
     /* background-image: url(../assets/img/searchIcon.png); */
-    background-size: 25px 25px;
+    background-size: 20px 20px;
     font-size:10px !important;
     background-repeat: no-repeat;
     /* padding:17px 20px 17px 20px; */
@@ -87,7 +87,7 @@ hr{
     color:white;
     height:35px;
     width:35px;
-    margin: auto 5px;
+    margin: 5px;
     border-radius: .7rem;
     padding:0px !important;
     /* color:white !important; */
