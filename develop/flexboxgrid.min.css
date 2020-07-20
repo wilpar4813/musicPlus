@@ -79,6 +79,7 @@ hr{
     /* flex:1; */
     /* background-image: url(../assets/img/searchIcon.png); */
     background-size: 25px 25px;
+    font-size:15px;
     background-repeat: no-repeat;
     /* padding:17px 20px 17px 20px; */
     background-position: center; 
@@ -86,8 +87,9 @@ hr{
     color:white;
     height:35px;
     width:35px;
-    margin: auto;
+    margin: auto 5px;
     border-radius: .7rem;
+    padding:0px !important;
     /* color:white !important; */
 }
 /* The following css is for the main body of code */

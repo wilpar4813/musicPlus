@@ -54,7 +54,7 @@ $(document).ready(function () {
         //get song lyrics
         //console.log(compareSong)
         getLyrix(compareSong, artistName);
-
+        // Check for duplicate songs before adding to list
         if (addSongArr.length > 0) {
             for (var i = 0; i < addSongArr.length; i++) {
                 //console.log(addSongArr[i].title)
@@ -64,13 +64,14 @@ $(document).ready(function () {
                     foundSong = true;
                 }
             }
-        }
+        }// No duplicates found
         if (!foundSong) {
             //console.log(compareSong)
             //set background color of song div to blue
             clickThis.attr('style', 'border:5px solid purple;');
             // clickThis.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + addSongArr[i].album.cover + '");');
             //push selected song title in array
+            
             addSongArr.push({
                 id: clickThis.attr('data-number'),
                 title: clickThis.text(),
@@ -202,7 +203,7 @@ $(document).ready(function () {
         $('#playlist').empty();
         //re-add header and hr
         var h1 = $('<h1>');
-        h1.text('BriefList');
+        h1.text('Track List');
         var hr = $('<hr>');
         $('#playlist').append(h1);
         $('#playlist').append(hr);
