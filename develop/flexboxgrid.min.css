@@ -79,6 +79,7 @@ hr{
     /* flex:1; */
     /* background-image: url(../assets/img/searchIcon.png); */
     background-size: 25px 25px;
+    font-size:15px;
     background-repeat: no-repeat;
     /* padding:17px 20px 17px 20px; */
     background-position: center; 
