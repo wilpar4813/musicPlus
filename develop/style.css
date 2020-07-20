@@ -22,6 +22,7 @@
 
 #songTitle {
     position: absolute;
+    left:0;
     bottom: 0px;
     font-size: 12px;
     font-weight:bolder;
@@ -29,7 +30,7 @@
     background-color: rgba(0,0,0,0.7);
     border-radius: 15px;
     padding:7px;
-    width:50%;
+    width:100%;
     
 
 }

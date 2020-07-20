@@ -6,7 +6,7 @@ body{
     padding-bottom: 60px;
 }
 
-h1{
+h2{
     text-align: center;
 }
 hr{
@@ -45,7 +45,7 @@ hr{
     font-weight:bolder;
     font-family: 'MuseoModerno', cursive !important;   
     /* margin-left:10px !important; */
-    margin-right: 75px !important;
+    margin-left: 10px !important;
     color: white !important;
     
 }
@@ -56,7 +56,7 @@ hr{
     
     /* float:right; */
     flex:2;
-    margin-right:10px;
+    /* margin-right:10px; */
     margin-left: 10px;
     font-size:20px;
 }
@@ -242,9 +242,15 @@ body{
     #songRow{
         max-height: 450px;
         max-width: 225px;
+        padding:0 !important;
         margin-left: auto;
         margin-right: auto;
         
+    }
+
+    #songSpot{
+        height:100px;
+        width:100px;
     }
 
       #songLyrix{
@@ -254,6 +260,10 @@ body{
       hr{
           margin-bottom:  20px;
       }
+  }
+
+  #songTitle{
+      font-size: 12px;
   }
 
   @media only screen and (max-width: 380px) {
