@@ -15,8 +15,8 @@ function getLyrix(artist, song) {
                 var data = JSON.parse(response);
                 postToHtml(data);
             } else {
-                $('#lyrix').hide();
-                var data = { message: { body: { lyrics: { lyrics_body: "Lyrics Not Available!" } } } };
+                // $('#lyrix').hide();
+                var data = { message: { body: { lyrics: { lyrics_body: "Lyrics Not Available" } } } };
                 postToHtml(data);
             }
         });
