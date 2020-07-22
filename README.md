@@ -18,19 +18,6 @@ As a music lover, you might wish you had a free and easy place to search music f
 
 ![Music Brief Image](./assets/img/musicBrief3.png)
 
-## Version 1
-
-![Music Plus Image](./assets/img/musicPlus.png)
-
-
-![Music Plus Image](./assets/img/musicPlus2.png)
-
-
-![Music Plus Image](./assets/img/musicPlus3.png)
-
-
-![Music Plus Image](./assets/img/musicPlus4.png)
-
 ## Installation
 
 ### Goto the following link to use SnapTrax:
@@ -89,7 +76,20 @@ As a music lover, you might wish you had a free and easy place to search music f
     https://www.iconsdb.com/black-icons/search-13-icon.html
 
 ## Versions
-Version 1.0.0 Released Saturday January 4th, 2020
+
 Version 2.0.0 Released Saturday June 18th, 2020
 
+Current Version
 
+Version 1.0.0 Released Saturday January 4th, 2020
+
+![Music Plus Image](./assets/img/musicPlus.png)
+
+
+![Music Plus Image](./assets/img/musicPlus2.png)
+
+
+![Music Plus Image](./assets/img/musicPlus3.png)
+
+
+![Music Plus Image](./assets/img/musicPlus4.png)
