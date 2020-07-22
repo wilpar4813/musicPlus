@@ -106,6 +106,7 @@ $(document).ready(function () {
 
     function addToPlaylist() {
         $('#remove').show();
+        // clickThis.css('border', '5px solid black');
         //this function stops music so set var to not playing i.e. false
         isPlaying = false;
         //save playlist array to local storage;
