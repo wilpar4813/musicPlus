@@ -106,7 +106,7 @@ $(document).ready(function () {
 
     function addToPlaylist() {
         $('#remove').show();
-        // clickThis.css('border', '5px solid black');
+        $('#songRow').children().css('border', '5px solid black');
         //this function stops music so set var to not playing i.e. false
         isPlaying = false;
         //save playlist array to local storage;
@@ -232,12 +232,12 @@ $(document).ready(function () {
         beenCleared = true;
         $('#playlist').hide();
         $('#remove').hide();
-        $('#add').hide();
+        // $('#add').hide();
         $('#lyrix').hide();
-        $('#clear').hide();
+        // $('#clear').hide();
         //clear background color and playlist array
-        $('#songRow').children().attr('style', 'background: darkgrey;');
-        $('#songRow').empty();
+        $('#songRow').children().css('border', '5px solid black');
+        // $('#songRow').empty();
         $('#songLyrix').empty();
         localStorage.setItem('playlist', []);
         addSongArr = [];
