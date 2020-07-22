@@ -70,7 +70,7 @@ $(document).ready(function () {
         if (!foundSong) {
             //console.log(compareSong)
             //set background color of song div to blue
-            clickThis.attr('style', 'border:5px solid purple;');
+            clickThis.css('border', '5px solid purple;');
             // clickThis.attr('style', 'background-size: cover; background-repeat: no-repeat, repeat; background-image: url("' + addSongArr[i].album.cover + '");');
             //push selected song title in array
             
@@ -82,7 +82,7 @@ $(document).ready(function () {
             });
             //console.log(addSongArr);
         } else {
-            clickThis.attr('style', 'border:4px solid black;');
+            clickThis.css('border', '5px solid black;');
             //remove selected song title out of array
             //filter the array to create a new array minus the selected song
             newSongArr = addSongArr.filter(function (val) {
@@ -233,6 +233,7 @@ $(document).ready(function () {
         $('#remove').hide();
         $('#add').hide();
         $('#lyrix').hide();
+        $('#clear').hide();
         //clear background color and playlist array
         $('#songRow').children().attr('style', 'background: darkgrey;');
         $('#songRow').empty();
